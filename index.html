@@ -7,11 +7,15 @@
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="./src/index.css" />
     <script type="module" src="/src/stripe-cart-additem.ts"></script>
+    <script type="module" src="/src/stripe-cart.ts"></script>
   </head>
   <body>
     This is my item
     <stripe-cart-additem price-id="price_1LoAhVKFGxMzGbgkUgrHPg0z">
       <button>Add a thing to the cart</button>
     </stripe-cart-additem>
+    <div> Here is a cart
+      <stripe-cart></stripe-cart>
+    </div>
   </body>
 </html>

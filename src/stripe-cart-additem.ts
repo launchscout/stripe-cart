@@ -8,7 +8,8 @@ import { liveState } from 'phx-live-state';
     send: ['add_cart_item']
   },
   channelName: 'stripe_cart:new',
-  url: 'ws://localhost:4000/socket'
+  url: 'ws://localhost:4000/socket',
+  shared: true
 })
 export class StripeCartAddItemElement extends LitElement {
 
@@ -17,7 +18,7 @@ export class StripeCartAddItemElement extends LitElement {
 
   constructor() {
     super();
-    this.addEventListener('click', (e) => {
+    this.addEventListener('click', (_event) => {
       this.dispatchEvent(new CustomEvent('add_cart_item', {detail: {stripe_price: this.priceId}}))
     });
   }
