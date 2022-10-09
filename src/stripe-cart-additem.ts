@@ -1,7 +1,15 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { liveState } from 'phx-live-state';
 
 @customElement('stripe-cart-additem')
+@liveState({
+  events: {
+    send: ['add_cart_item']
+  },
+  channelName: 'stripe_cart:new',
+  url: 'ws://localhost:4000/socket'
+})
 export class StripeCartAddItemElement extends LitElement {
 
   @property({attribute: 'price-id'})
@@ -10,9 +18,10 @@ export class StripeCartAddItemElement extends LitElement {
   constructor() {
     super();
     this.addEventListener('click', (e) => {
-      console.log(`${e} got clicked. should add ${this.priceId} to cart.`);
+      this.dispatchEvent(new CustomEvent('add_cart_item', {detail: {stripe_price: this.priceId}}))
     });
   }
+  
   render() {
     return html`<slot></slot>`;
   }
