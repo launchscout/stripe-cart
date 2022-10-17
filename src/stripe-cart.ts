@@ -29,12 +29,23 @@ type Cart = {
   channelName: 'stripe_cart:new',
   url: 'ws://localhost:4000/socket',
   shared: true,
-  properties: ['cart']
+  properties: ['cart'],
+  events: {
+    send: ['checkout'],
+    receive: ['checkout_redirect']
+  }
 })
 export class StripeCartElement extends LitElement {
   
   @state()
   cart: Cart | undefined;
+
+  constructor() {
+    super();
+    this.addEventListener('checkout_redirect', (e: CustomEvent<{checkout_url: string}>) => {
+      window.location.href = e.detail.checkout_url;
+    });
+  }
 
   render() {
     return html`
@@ -56,7 +67,18 @@ export class StripeCartElement extends LitElement {
           `)}
         </tbody>
       </table>
+      <button @click=${this.checkout}>Check out</button>
     `
   }
 
+  checkout(_e: Event) {
+    this.dispatchEvent(new CustomEvent('checkout', {detail: {return_url: window.location.href}}))
+  }
+
+}
+
+declare global {
+  interface HTMLElementEventMap {
+    'checkout_redirect': CustomEvent<{checkout_url: string}>;
+  }
 }
