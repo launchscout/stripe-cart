@@ -19,6 +19,15 @@ declare type Cart = {
 };
 export declare class StripeCartElement extends LitElement {
     cart: Cart | undefined;
+    constructor();
     render(): import("lit-html").TemplateResult<1>;
+    checkout(_e: Event): void;
+}
+declare global {
+    interface HTMLElementEventMap {
+        'checkout_redirect': CustomEvent<{
+            checkout_url: string;
+        }>;
+    }
 }
 export {};
