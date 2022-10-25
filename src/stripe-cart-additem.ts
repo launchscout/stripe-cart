@@ -7,9 +7,7 @@ import { liveState } from 'phx-live-state';
   events: {
     send: ['add_cart_item']
   },
-  channelName: 'stripe_cart:new',
-  url: 'ws://localhost:4000/socket',
-  shared: true
+  context: 'cartState'
 })
 export class StripeCartAddItemElement extends LitElement {
 

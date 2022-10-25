@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "lit": "^2.3.1",
-    "phx-live-state": "0.6.1"
+    "phx-live-state": "0.7.0"
   },
   "devDependencies": {
     "typescript": "^4.6.4",
