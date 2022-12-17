@@ -28,6 +28,7 @@ type Cart = {
 @liveState({
   // channelName: 'stripe_cart:new',
   url: 'ws://localhost:4000/socket',
+  channelName: 'stripe_cart:new',
   properties: ['cart'],
   provide: {
     scope: window,
@@ -41,23 +42,10 @@ type Cart = {
 export class StripeCartElement extends LitElement {
 
   @state()
-  _cart: Cart | undefined;
-
-  @state()
-  expanded: boolean = false;
+  cart: Cart | undefined;
 
   @query('sl-dialog')
   dialog: HTMLElement | undefined;
-
-  public get cart(): Cart | undefined { return this._cart; }
-  public set cart(theCart: Cart | undefined) {
-    window.localStorage.setItem('stripe-cart', JSON.stringify(theCart));
-    this._cart = theCart;
-  }
-
-  public get channelName(): string {
-    return 'stripe_cart:blah';
-  }
 
   constructor() {
     super();
@@ -79,7 +67,7 @@ export class StripeCartElement extends LitElement {
   render() {
     return html`
     <sl-dialog>
-      <table>
+      <table part="cart-table">
         <thead>
           <tr>
             <th>Item</th>

@@ -19,7 +19,10 @@ declare type Cart = {
 };
 export declare class StripeCartElement extends LitElement {
     cart: Cart | undefined;
+    dialog: HTMLElement | undefined;
     constructor();
+    itemCount(): import("lit-html").TemplateResult<1> | "";
+    expandCart(): void;
     render(): import("lit-html").TemplateResult<1>;
     checkout(_e: Event): void;
 }

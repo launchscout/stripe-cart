@@ -7,6 +7,7 @@ import { liveState } from 'phx-live-state';
   events: {
     send: ['add_cart_item']
   },
+  properties: ['cart'],
   context: 'cartState'
 })
 export class StripeCartAddItemElement extends LitElement {
@@ -16,7 +17,8 @@ export class StripeCartAddItemElement extends LitElement {
 
   constructor() {
     super();
-    this.addEventListener('click', (_event) => {
+    this.addEventListener('click', (event) => {
+      console.log(event);
       this.dispatchEvent(new CustomEvent('add_cart_item', {detail: {stripe_price: this.priceId}}))
     });
   }
