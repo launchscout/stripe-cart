@@ -10,8 +10,10 @@
   <meta property="og:description" content="A demo store for launch-cart" />
 
   <link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css" />
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"></script>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/themes/light.css" />
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.83/dist/shoelace.js"></script>
 
   <script type="module" src="/src/stripe-cart-additem.ts"></script>
   <script type="module" src="/src/stripe-cart.ts"></script>
@@ -32,58 +34,64 @@
     <stripe-cart></stripe-cart>
   </header>
 
-  
-<main id="main-content" tabindex="-1">
-  <h1 class="">Products</h1>
-  <ol class="product-list" title="List of Products">
-    
-    <li class="product-preview" title="Light shirt">
-      <a href="/products/light-shirt/" rel="bookmark">
-        <img src="https://files.stripe.com/links/MDB8YWNjdF8xTVZKdXNDT1djT0ZsNmF4fGZsX3Rlc3RfUzJJaFFzUThJNEZBdEZCMHpXUHFXWjVz00P8YQKzpR" alt="Light shirt image" class="product-preview__image">
-        <h2 class="product-preview__name">
-          Light shirt
-        </h2>
-      </a>
-      <div class="product-preview__details" title="Product Details">
-        <p class="product-preview__price" title="Product Price">$25.00</p>
-        <stripe-cart-additem price-id="price_1MYb1ECOWcOFl6axI0nQEQ0M">
-          <button class="button" type="submit">Add to Cart</button>
-        </stripe-cart-additem>
-      </div>
-    </li>
-    
-    <li class="product-preview" title="Beanie">
-      <a href="/products/beanie/" rel="bookmark">
-        <img src="https://files.stripe.com/links/MDB8YWNjdF8xTVZKdXNDT1djT0ZsNmF4fGZsX3Rlc3RfWmJjbVNTTUZ4TjFQMHNSQWtuUE9VUzVs00UqpoIyR8" alt="Beanie image" class="product-preview__image">
-        <h2 class="product-preview__name">
-          Beanie
-        </h2>
-      </a>
-      <div class="product-preview__details" title="Product Details">
-        <p class="product-preview__price" title="Product Price">$25.31</p>
-        <stripe-cart-additem price-id="price_1MXrJ2COWcOFl6axRpjFjB9Z">
-          <button class="button" type="submit">Add to Cart</button>
-        </stripe-cart-additem>
-      </div>
-    </li>
-    
-    <li class="product-preview" title="My New House">
-      <a href="/products/my-new-house/" rel="bookmark">
-        <img src="https://files.stripe.com/links/MDB8YWNjdF8xTVZKdXNDT1djT0ZsNmF4fGZsX3Rlc3RfSkxhTmR6S0U2ZThob0VRbDJlRTBLdWdv00q6tLiBlW" alt="My New House image" class="product-preview__image">
-        <h2 class="product-preview__name">
-          My New House
-        </h2>
-      </a>
-      <div class="product-preview__details" title="Product Details">
-        <p class="product-preview__price" title="Product Price">$100,000.00</p>
-        <stripe-cart-additem price-id="price_1MXTmRCOWcOFl6axhVFX7Bab">
-          <button class="button" type="submit">Add to Cart</button>
-        </stripe-cart-additem>
-      </div>
-    </li>
-    
-  </ol>
-</main>}
+
+  <main id="main-content" tabindex="-1">
+    <h1 class="">Products</h1>
+    <ol class="product-list" title="List of Products">
+
+      <li class="product-preview" title="Light shirt">
+        <a href="/products/light-shirt/" rel="bookmark">
+          <img
+            src="https://files.stripe.com/links/MDB8YWNjdF8xTVZKdXNDT1djT0ZsNmF4fGZsX3Rlc3RfUzJJaFFzUThJNEZBdEZCMHpXUHFXWjVz00P8YQKzpR"
+            alt="Light shirt image" class="product-preview__image">
+          <h2 class="product-preview__name">
+            Light shirt
+          </h2>
+        </a>
+        <div class="product-preview__details" title="Product Details">
+          <p class="product-preview__price" title="Product Price">$25.00</p>
+          <stripe-cart-additem price-id="price_1MYb1ECOWcOFl6axI0nQEQ0M">
+            <button class="button" type="submit">Add to Cart</button>
+          </stripe-cart-additem>
+        </div>
+      </li>
+
+      <li class="product-preview" title="Beanie">
+        <a href="/products/beanie/" rel="bookmark">
+          <img
+            src="https://files.stripe.com/links/MDB8YWNjdF8xTVZKdXNDT1djT0ZsNmF4fGZsX3Rlc3RfWmJjbVNTTUZ4TjFQMHNSQWtuUE9VUzVs00UqpoIyR8"
+            alt="Beanie image" class="product-preview__image">
+          <h2 class="product-preview__name">
+            Beanie
+          </h2>
+        </a>
+        <div class="product-preview__details" title="Product Details">
+          <p class="product-preview__price" title="Product Price">$25.31</p>
+          <stripe-cart-additem price-id="price_1MXrJ2COWcOFl6axRpjFjB9Z">
+            <button class="button" type="submit">Add to Cart</button>
+          </stripe-cart-additem>
+        </div>
+      </li>
+
+      <li class="product-preview" title="My New House">
+        <a href="/products/my-new-house/" rel="bookmark">
+          <img
+            src="https://files.stripe.com/links/MDB8YWNjdF8xTVZKdXNDT1djT0ZsNmF4fGZsX3Rlc3RfSkxhTmR6S0U2ZThob0VRbDJlRTBLdWdv00q6tLiBlW"
+            alt="My New House image" class="product-preview__image">
+          <h2 class="product-preview__name">
+            My New House
+          </h2>
+        </a>
+        <div class="product-preview__details" title="Product Details">
+          <p class="product-preview__price" title="Product Price">$100,000.00</p>
+          <stripe-cart-additem price-id="price_1MXTmRCOWcOFl6axhVFX7Bab">
+            <button class="button" type="submit">Add to Cart</button>
+          </stripe-cart-additem>
+        </div>
+      </li>
+
+    </ol>
+  </main>}
   <footer>
     <span class="flex">
       <a href="https://github.com/launchscout/demo-store" target="blank">Demo Store on GitHub</a>
