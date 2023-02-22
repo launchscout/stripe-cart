@@ -7,7 +7,6 @@ import { liveState } from 'phx-live-state';
   events: {
     send: ['add_cart_item']
   },
-  properties: ['cart'],
   context: 'cartState'
 })
 export class StripeCartAddItemElement extends LitElement {

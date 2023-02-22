@@ -26,7 +26,6 @@ type Cart = {
 
 @customElement('stripe-cart')
 @liveState({
-  // channelName: 'stripe_cart:new',
   url: 'ws://localhost:4000/socket',
   channelName: 'stripe_cart:new',
   properties: ['cart'],
@@ -78,7 +77,7 @@ export class StripeCartElement extends LitElement {
         <tbody>
           ${this.cart?.items.map(item => html`
           <tr>
-            <td>${item.product.product.description}</td>
+            <td>${item.product.product.name}</td>
             <td>${item.quantity}</td>
             <td>${item.product.amount}</td>
           </tr>
