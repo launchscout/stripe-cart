@@ -16,6 +16,7 @@ type Product = {
 type StripeProduct = {
   description: string;
   id: string;
+  name: string;
   images: string[];
 }
 
