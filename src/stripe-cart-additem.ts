@@ -23,6 +23,6 @@ export class StripeCartAddItemElement extends LitElement {
   }
   
   render() {
-    return html`<slot></slot>`;
+    return html`<slot><button>Add item</button></slot>`;
   }
 }

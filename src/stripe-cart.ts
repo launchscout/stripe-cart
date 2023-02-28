@@ -28,7 +28,7 @@ type Cart = {
 @customElement('stripe-cart')
 @liveState({
   url: 'ws://localhost:4000/socket',
-  channelName: 'stripe_cart:new',
+  topic: 'stripe_cart:new',
   properties: ['cart'],
   provide: {
     scope: window,

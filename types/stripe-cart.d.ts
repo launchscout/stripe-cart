@@ -1,19 +1,20 @@
 import { LitElement } from 'lit';
-declare type CartItem = {
+type CartItem = {
     product: Product;
     quantity: number;
 };
-declare type Product = {
+type Product = {
     id: string;
     amount: number;
     product: StripeProduct;
 };
-declare type StripeProduct = {
+type StripeProduct = {
     description: string;
     id: string;
+    name: string;
     images: string[];
 };
-declare type Cart = {
+type Cart = {
     items: Array<CartItem>;
     total: number;
 };
